@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Upcoming movies{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Upcoming Movies</h1>
+{% if results %}
+    <div class="row text-center">
+        {% for movie in results %}
+            <div class="col-sm-6 col-md-3">
+                <figure>
+                    <a href="https://www.themoviedb.org/tv/{{ movie.id|default('undefined') }}">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path|default('undefined') }}" alt="{{ movie.title|default('undefined') }}" width="300" title="{{ movie.overview|default('undefined') }}">
+                    </a>
+                    <figcaption><b>{{ movie.title|default('undefined') }}</b></figcaption>
+                    <figcaption class="fw-light">{{ movie.release_date|default('undefined') }}</figcaption>
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No movies to display</p>
+{% endif %}
+{% endblock %}

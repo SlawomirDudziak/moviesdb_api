@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Popular people{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Popular people</h1>
+{% if results %}
+    <div class="row text-center">
+        {% for person in results %}
+            <div class="col-sm-6 col-md-3">
+                <figure>
+                    <a href="https://www.themoviedb.org/person/{{ person.id|default('undefined') }}">
+                        <img src="https://image.tmdb.org/t/p/w500{{ person.profile_path|default('undefined') }}" alt="{{ person.name|default('undefined') }}" width="300">
+                    </a>
+                    <figcaption><b>{{ person.name|default('undefined') }}</b></figcaption>
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No persons to display</p>
+{% endif %}
+{% endblock %}
