@@ -10,7 +10,7 @@
             <div class="col-sm-6 col-md-3">
                 <figure>
                     <a href="https://www.themoviedb.org/person/{{ person.id|default('undefined') }}">
-                        <img src="https://image.tmdb.org/t/p/w500{{ person.profile_path|default('undefined') }}" alt="{{ person.name|default('undefined') }}" width="300">
+                        <img class="card" src="https://image.tmdb.org/t/p/w500{{ person.profile_path|default('undefined') }}" alt="{{ person.name|default('undefined') }}" width="300">
                     </a>
                     <figcaption><b>{{ person.name|default('undefined') }}</b></figcaption>
                 </figure>

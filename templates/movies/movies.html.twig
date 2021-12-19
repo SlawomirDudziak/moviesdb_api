@@ -10,7 +10,7 @@
             <div class="col-sm-6 col-md-3">
                 <figure>
                     <a href="https://www.themoviedb.org/tv/{{ movie.id|default('undefined') }}">
-                        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path|default('undefined') }}" alt="{{ movie.title|default('undefined') }}" width="300" title="{{ movie.overview|default('undefined') }}">
+                        <img class="card" src="https://image.tmdb.org/t/p/w500{{ movie.poster_path|default('undefined') }}" alt="{{ movie.title|default('undefined') }}" width="300" title="{{ movie.overview|default('undefined') }}">
                     </a>
                     <figcaption><b>{{ movie.title|default('undefined') }}</b></figcaption>
                     <figcaption class="fw-light">{{ movie.release_date|default('undefined') }}</figcaption>

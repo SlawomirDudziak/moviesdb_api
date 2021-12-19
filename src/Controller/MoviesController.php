@@ -56,14 +56,22 @@ class MoviesController extends AbstractController {
     }
 
     /**
-     * @Route("/", name="movies_list")
+     * @Route("/", name="homepage")
      */
     public function index()
+    {
+        return $this->render('base.html.twig');
+    }
+
+    /**
+     * @Route("/movies", name="movies_list")
+     */
+    public function movies()
     {
         $movies = array();
         $movies = $this->fetchTrendingMovies();
 
-        return $this->render('movies/index.html.twig', $movies);
+        return $this->render('movies/movies.html.twig', $movies);
     }
 
     /**
@@ -74,7 +82,7 @@ class MoviesController extends AbstractController {
         $tvshows = array();
         $tvshows = $this->fetchTrendingTVShows();
 
-        return $this->render('tvshows/index.html.twig', $tvshows);
+        return $this->render('tvshows/tvshows.html.twig', $tvshows);
     }
 
     /**

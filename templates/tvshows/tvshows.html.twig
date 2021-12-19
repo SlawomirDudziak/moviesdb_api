@@ -10,7 +10,7 @@
             <div class="col-sm-6 col-md-3">
                 <figure>
                     <a href="https://www.themoviedb.org/tv/{{ tvshow.id|default('undefined') }}">
-                        <img src="https://image.tmdb.org/t/p/w500{{ tvshow.poster_path|default('undefined') }}" alt="{{ tvshow.name|default('undefined') }}" width="300">
+                        <img class="card" src="https://image.tmdb.org/t/p/w500{{ tvshow.poster_path|default('undefined') }}" alt="{{ tvshow.name|default('undefined') }}" width="300">
                     </a>
                     <figcaption><b>{{ tvshow.name|default('undefined') }}</b></figcaption>
                     <figcaption class="fw-light">{{ tvshow.first_air_date|default('undefined') }}</figcaption>
