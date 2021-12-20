@@ -9,7 +9,7 @@
         {% for tvshow in results %}
             <div class="col-sm-6 col-md-3">
                 <figure>
-                    <a href="https://www.themoviedb.org/tv/{{ tvshow.id|default('undefined') }}">
+                    <a href="/tvshows/{{ tvshow.id|default('undefined') }}">
                         <img class="card" src="https://image.tmdb.org/t/p/w500{{ tvshow.poster_path|default('undefined') }}" alt="{{ tvshow.name|default('undefined') }}" width="300">
                     </a>
                     <figcaption><b>{{ tvshow.name|default('undefined') }}</b></figcaption>

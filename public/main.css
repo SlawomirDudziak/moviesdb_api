@@ -1,10 +1,15 @@
 .card {
-    border: 2px solid white;
-    border-radius: 15px;
+    /* border: 2px solid white; */
+    /* border-radius: 15px; */
     transition: transform .3s;
+    overflow: hidden;
+    width: 300px;
+    height: 450px;
 }
 
 .card:hover {
-    transform: scale(1.5);
-    transform-origin: 50% 50%;
+    -webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+    transform: scale(1.1);
+    /* transform-origin: 50% 50%; */
 }

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ details.title|default('undefined') }}{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-3">
+        <a href="https://www.themoviedb.org/movie/{{ details.id|default('undefined') }}">
+            <img class="card" src="https://image.tmdb.org/t/p/w500{{ details.poster_path|default('undefined') }}" alt="{{ details.title|default('undefined') }}" width="300">
+        </a>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <h2>{{ details.title|default('undefined') }}</h2>
+        <h4>{{ details.vote_average}} vote average {{ details.vote_count }} vote count</h4>
+        <h4>Description</h4>
+        <p>{{ details.overview }}</p>
+        {% if details.original_title != details.title %}
+            <p>{{ details.original_title }}</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
