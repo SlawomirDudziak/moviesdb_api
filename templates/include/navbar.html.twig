@@ -6,15 +6,35 @@
     </button>
     <div class="collapse navbar-collapse" id="mobile-nav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a href="/movies" class="nav-link">Movies</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Movies
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/movies/upcoming">Upcoming</a>
+                    <a class="dropdown-item" href="/movies/bestrated">Top rated</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a href="/tvshows" class="nav-link">TV Shows</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    TV Shows
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/tvshows/upcoming">Upcoming</a>
+                    <a class="dropdown-item" href="/tvshows/toprated">Top rated</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a href="/people" class="nav-link">People</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    People
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/people/popular">Popular</a>
+                </div>
             </li>
+            {# <li class="nav-item">
+                <a href="/playlist" class="nav-link">Playlist</a>
+            </li> #}
         </ul>
     </div>
 </div>

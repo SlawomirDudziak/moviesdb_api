@@ -11,12 +11,12 @@
     </div>
     <div class="col-sm-12 col-md-6">
         <h2>{{ details.name|default('undefined') }}</h2>
-        <h6>Release date: {{ details.first_air_date }}</h6>
-        <h4>{{ details.vote_average}} vote average {{ details.vote_count }} vote count</h4>
+        <h6>Release date: {{ details.first_air_date|default('undefined') }}</h6>
+        <h4>{{ details.vote_average}} vote average {{ details.vote_count|default('undefined') }} vote count</h4>
         <h4>Description</h4>
-        <p>{{ details.overview }}</p>
+        <p>{{ details.overview|default('undefined') }}</p>
         {% if details.original_name != details.name %}
-            <p>{{ details.original_name }}</p>
+            <p>{{ details.original_name|default('undefined') }}</p>
         {% endif %}
     </div>
 </div>
