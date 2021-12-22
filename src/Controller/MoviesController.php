@@ -56,7 +56,7 @@ class MoviesController extends AbstractController
     {
         $movies = $this->fetch_movies('upcoming');
                 
-        return $this->render('movies/movies.html.twig', $movies);
+        return $this->render('movies/upcoming_movies.html.twig', $movies);
     }
     
     /**
@@ -66,7 +66,7 @@ class MoviesController extends AbstractController
     {
         $movies = $this->fetch_movies('top_rated');
 
-        return $this->render('movies/movies.html.twig', $movies);
+        return $this->render('movies/top_rated_movies.html.twig', $movies);
     }
     
     /**
@@ -74,14 +74,9 @@ class MoviesController extends AbstractController
      */
     public function movie($id)
     {
-        $movies = $this->fetch_movies('upcoming');
-
-        $details = '';
-        for ($i = 0; $i < 20; $i++) {
-            if ($id == $movies['results'][$i]['id']) $details = $movies['results'][$i];
-        }
+        $movie = $this->fetch_movies($id);
         
-        return $this->render('movies/movie_details.html.twig', array('details' => $details));
+        return $this->render('movies/movie_details.html.twig', array('details' => $movie));
     }
 
     /**

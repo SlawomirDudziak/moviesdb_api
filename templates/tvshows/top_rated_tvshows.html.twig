@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Top Rated TVShows{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Top Rated TVShows</h1>
+{% if results %}
+    <div class="row text-center">
+        {% for tvshow in results %}
+            <div class="col-sm-6 col-md-3">
+                <figure>
+                    <a href="/tvshows/{{ tvshow.id|default('undefined') }}">
+                        <img class="card" src="https://image.tmdb.org/t/p/w500{{ tvshow.poster_path|default('undefined') }}" alt="{{ tvshow.name|default('undefined') }}" width="300">
+                    </a>
+                    <figcaption><b>{{ tvshow.name|default('undefined') }}</b></figcaption>
+                    <figcaption class="fw-light">{{ tvshow.first_air_date|default('undefined') }}</figcaption>
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No tvshows to display</p>
+{% endif %}
+{% endblock %}

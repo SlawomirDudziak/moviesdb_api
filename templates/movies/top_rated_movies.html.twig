@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Top Rated Movies{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Top Rated Movies</h1>
+{% if results %}
+    <div class="row text-center">
+        {% for movie in results %}
+            <div class="col-sm-6 col-md-3">
+                <figure>
+                    <a href="/movie/{{ movie.id|default('undefined') }}">
+                        <img class="card" src="https://image.tmdb.org/t/p/w500{{ movie.poster_path|default('undefined') }}" alt="{{ movie.title|default('undefined') }}" title="{{ movie.title|default('undefined') }}" width="300" height="450">
+                    </a>
+                    <figcaption><b>{{ movie.title|default('undefined') }}</b></figcaption>
+                    <figcaption class="fw-light">{{ movie.release_date|default('undefined') }}</figcaption>
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No movies to display</p>
+{% endif %}
+{% endblock %}
