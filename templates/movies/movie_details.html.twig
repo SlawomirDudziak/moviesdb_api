@@ -11,12 +11,15 @@
     </div>
     <div class="col-sm-12 col-md-6">
         <h2>{{ details.title|default('undefined') }}</h2>
+        <h6>{{ details.release_date|default('undefined') }}</h6>
         <h4>{{ details.vote_average}} vote average {{ details.vote_count }} vote count</h4>
         <h4>Description</h4>
         <p>{{ details.overview }}</p>
         {% if details.original_title != details.title %}
-            <p>{{ details.original_title }}</p>
+            <p>Original title: {{ details.original_title }}</p>
         {% endif %}
+        <input type="hidden" name="type" value="movie">
+        <a id="addBtn" class="btn btn-info" href="/save/movie/{{ details.title }}/{{ details.release_date }}">Add to playlist</a>
     </div>
 </div>
 

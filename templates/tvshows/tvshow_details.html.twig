@@ -18,6 +18,8 @@
         {% if details.original_name != details.name %}
             <p>{{ details.original_name|default('undefined') }}</p>
         {% endif %}
+        <input type="hidden" name="type" value="tvshow">
+        <a id="addBtn" class="btn btn-info" href="/save/tvshow/{{ details.name }}/{{ details.first_air_date }}">Add to playlist</a>
     </div>
 </div>
 
