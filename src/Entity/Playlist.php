@@ -30,7 +30,7 @@ class Playlist
     /**
      * @ORM\Column(type="string", length=12)
      */
-    private $release_date;
+    private $releasedate;
 
     /**
      * @ORM\Column(type="boolean")
@@ -45,7 +45,7 @@ class Playlist
     /**
      * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
-    private $created_at;
+    private $createdat;
 
     public function __construct()
     {
@@ -79,12 +79,12 @@ class Playlist
 
     public function getReleaseDate()
     {
-        return $this->release_date;
+        return $this->releasedate;
     }
 
-    public function setReleaseDate($release_date)
+    public function setReleaseDate($releasedate)
     {
-        $this->release_date = $release_date;
+        $this->releasedate = $releasedate;
     }
 
     public function getDeleted()
@@ -109,6 +109,6 @@ class Playlist
 
     public function getCreatedAt()
     {
-        return $this->created_at;
+        return $this->createdat;
     }
 }

@@ -23,7 +23,7 @@
                             <td scope="row">{{ movie.id }}</td>
                             <td>{{ movie.type }}</td>
                             <td>{{ movie.name }}</td>
-                            <td>{{ movie.release_date|default('undefined') }}</td>
+                            <td>{{ movie.releasedate|default('undefined') }}</td>
                             {% if movie.watched %}
                             <td>Yes</td>
                             {% else %}
